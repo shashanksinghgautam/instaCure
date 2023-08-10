@@ -1,0 +1,169 @@
+<nav class="navbar navbar-expand-lg  bg-dark">
+  <a class="navbar-brand" href="#"><img src="../../../assets/instaCure-IMG-nbg.png" style="height: 50px; " ></a>
+  <div class="container-fluid">
+    <input type="checkbox" class="ms-auto" id="check">
+    <label for="check" class="checkbtn">
+      <i class=" smallNav"><img src="../assets/menu.png" alt=""></i>
+
+    </label>
+
+    <div class="myNavBar ms-auto" id="navbarRight">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+
+        <li class="nav-item">
+
+          <a class="nav-link"  routerLink="/medicine">
+            <button type="submit" class="btn me-2 btn-primary btn-group-sm">
+              Medicine
+            </button>
+          </a>
+        </li>
+        <li class="nav-item">
+
+          <a class="nav-link"  routerLink="/landing-page">
+            <button type="submit" (click)="clearStorage()" class="btn me-2 btn-danger btn-group-sm">
+              Logout
+
+            </button>
+          </a>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="one" *ngFor="let Volunteera of Patients ">
+  <div class="container py-1">
+    <div class=" d-flex align-items-center justify-content-center">
+      <div class="col-lg-4 mt-1">
+        <div class="two">
+
+          <div class="card-body text-center">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+              class="rounded-circle img-fluid bg-light" style="width: 100px;">
+              <!-- <input type="file" class="form-controlform-control-sm" id="image" placeholder="image" required [(ngModel)]="Volunteer.image" name="image"> -->
+               <!-- <input type="file" class="form-controlform-control-sm" accept="images/*" (change)="onFileChanged($event)" id="image" placeholder="image" required [(ngModel)]="Volunteer.image" name="image"> -->
+               <input type="file"  (change)="kaunda($event)" />
+            <h5 class="my-3">{{Volunteera.user.uname}}</h5>
+            <p class="text-muted mb-1">Patient</p>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class=" d-flex align-items-center justify-content-center">
+
+    <div class="col-lg-8 mt-0 ">
+      <div class="two">
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">Full Name</p>
+              </div>
+              <div class="col-sm-6">
+                <p class="text-muted mb-0">{{Volunteera.user.uname}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">Email</p>
+              </div>
+              <div class="col-sm-6">
+                <p class="text-muted mb-0">{{Volunteera.user.email}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">Mobile</p>
+              </div>
+              <div class="col-sm-6">
+                <p class="text-muted mb-0">{{Volunteera.user.mobile}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">Address</p>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-muted mb-0">
+                  <div class="form-group row">
+                    <div class="col">
+                      <textarea class="form-control form-control-sm" id="address" required rows="1"
+                        placeholder="Address" required [(ngModel)]="Patient.address" name="category"></textarea>
+                    </div>
+                  </div>
+                </span>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">City</p>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-muted mb-0">
+                  <div class="col">
+                    <input type="text" class="form-control form-control-sm" placeholder="City" required
+                      [(ngModel)]="Patient.city" name="city">
+                  </div>
+                </span>
+              </div>
+            </div>
+            <hr>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">Postal Code</p>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-muted mb-0">
+                  <div class="col">
+                    <input type="text" class="form-control form-control-sm" id="postal" required minlength="6"
+                      maxlength="6" pattern="^[0-9]*$" placeholder="Postal Code" required
+                      [(ngModel)]="Patient.postalCode" name="zipcode">
+                  </div>
+                </span>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">Country</p>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-muted mb-0">
+                  <div class="col">
+                    <input type="text" readonly class="form-control form-control-sm " placeholder="India"
+                      name="Country">
+                  </div>
+                </span>
+              </div>
+            </div>
+            <hr>
+
+            <div class="form-group row">
+              <div class="d-flex justify-content-center mb-0">
+                <button type="submit" (click)="onSubmit()" class="btn btn-primary mb-2"> Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+

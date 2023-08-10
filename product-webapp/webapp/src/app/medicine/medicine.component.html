@@ -1,0 +1,82 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+  <a class="navbar-brand" href="#"><img src="../../../assets/instaCure-IMG-nbg.png" style="height: 50px; "></a>
+  <div class="container-fluid">
+    <input type="checkbox" class="ms-auto" id="check" />
+    <label for="check" class="checkbtn">
+      <i class="smallNav"><img src="../assets/menu.png" alt="" /></i>
+    </label>
+
+    <div class="myNavBar ms-auto" id="navbarRight">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+
+        <li>
+          <a class="nav-link" [hidden]="role != 'Volunteer'" routerLink="/medicine-volunteer">
+            <button type="submit" class="btn me-2 btn-info btn-group-sm">
+              Medical-Volunteer
+            </button>
+          </a>
+        </li>
+        <li>
+          <a class="nav-link">
+            <button type="submit" [hidden]="role == 'Volunteer'" (click)="goToEmail()" class="btn me-2 btn-primary btn-group-sm">
+              Raise a Request
+            </button>
+          </a>
+        </li>
+        <li class="nav-item">
+
+          <a class="nav-link" routerLink="/landing-page">
+            <button type="submit" class="btn me-2 btn-danger btn-group-sm">
+              Cancel
+            </button>
+          </a>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="xyz">
+  <div class="d-flex float-end align-items-center justify-content-center pb-4 me-4 mt-2"></div>
+  <a class="nav-link" [hidden]="role != 'Volunteer'" routerLink="/medicine-volunteer">
+  </a>
+</div>
+
+<input id="searchText-id" class="mt-2" [(ngModel)]="searchText" placeholder="Search By Medicine Name " />
+
+<div class="card-body overflow-auto ms-5 ps-5 ">
+  <div class="card" *ngFor="let Medicine of Medicines    | async | search: searchText | paginate:
+  { itemsPerPage: 4, currentPage: p } " let index="index"  class="p-1">
+    <div class="card ms-5">
+      <div class="card-body overflow-auto ">
+
+          <div class="form-group row">
+            <div class="" style="
+                text-decoration: solid;
+                text-align: center;
+                font-weight: bold;
+              ">
+              {{ Medicine.medicinename }}
+            </div>
+            <div class="">
+              <img src="../../assets/p1.jpg" />
+            </div>
+            <div class="" style="font-weight: bold">${{ Medicine.price }}</div>
+            <span>{{ Medicine.qnt }}</span>
+            <div class="">
+              <input type="number" min="1" max="10" class="form-control" id="Quantity{{Medicine.mid}}" required [(ngModel)]="qnt[Medicine.mid]"
+                name="Quantity"  style="margin: auto; width: 100px" />
+              <button type="submit" (click)="buyMedicine(Medicine.mid,Medicine.medicinename)" class="btn btn-info">
+                Buy Now
+              </button>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<pagination-controls (pageChange)="p = $event" class="float-right text-center">
+</pagination-controls>

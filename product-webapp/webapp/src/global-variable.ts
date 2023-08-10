@@ -1,0 +1,1 @@
+export const globalid:any =0

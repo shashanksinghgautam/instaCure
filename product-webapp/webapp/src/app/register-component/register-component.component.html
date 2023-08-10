@@ -1,0 +1,188 @@
+<section class="BODY">
+  <nav class="navbar navbar-expand-lg bg-dark">
+    <a class="navbar-brand" href="#"><img src="../../../assets/instaCure-IMG-nbg.png" style="height: 50px" /></a>
+    <div class="container-fluid">
+      <input type="checkbox" class="ms-auto" id="check" />
+      <label for="check" class="checkbtn">
+        <i class="smallNav"><img src="../assets/menu.png" alt="" /></i>
+      </label>
+
+      <div class="myNavBar ms-auto" id="navbarRight">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+
+            <a class="nav-link" routerLink="/medicine">
+              <button type="submit" class="btn me-2 btn-primary btn-group-sm">
+                Medicine
+              </button>
+            </a>
+          </li>
+          <li class="nav-item">
+
+            <a class="nav-link" routerLink="/login-component">
+              <button type="submit" class="btn me-2 btn-info text-white btn-group-sm">
+                Login
+              </button>
+            </a>
+          </li>
+          <li class="nav-item">
+
+            <a class="nav-link" routerLink="/landing-page">
+              <button type="submit" class="btn me-2 btn-danger btn-group-sm">
+                Cancel
+              </button>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section style="
+    background: linear-gradient(
+      to bottom,
+      #ff9934,
+      #ff9934,
+      #ffffff,
+      #ffffff,
+      #ffffff,
+      #138708,
+      #138708
+    );
+  ">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center" id="formbox">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px; background-color: #f7f7f7">
+            <div class="card-body p-5">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1 w-49 ml-5">
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+                    Sign Up
+                  </p>
+
+                  <form class="mx-2 mx-md-2" #myform="ngForm" (ngSubmit)="registerUser()">
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <div class="form-outline flex-fill mb-0">
+                        <small class="text-danger">
+                          &nbsp;&nbsp;{{ errorMsg }}</small>
+                      </div>
+                    </div>
+
+                    <div class="" *ngIf="uname.touched && uname.invalid && uname.errors?.['required']"
+                      class="text-danger">
+                      <small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Name
+                        is mandatory</small>
+                    </div>
+                    <div *ngIf="uname.touched && uname.invalid && uname.errors?.['minlength']" class="text-danger">
+                      <small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Min
+                        length is five</small>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input ngModel #uname="ngModel" type="text" id="form3Example1c" class="form-control"
+                          placeholder="Enter Full Name" name="uname" [(ngModel)]="user.uname" required="required"
+                          minlength="5" />
+                      </div>
+                    </div>
+
+                    <div class="" *ngIf="email.touched && email.invalid && email.errors?.['required']"
+                      class="text-danger">
+                      <small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Email
+                        is mandatory</small>
+                    </div>
+                    <div *ngIf="email.touched && email.invalid && email.errors?.['pattern']" class="text-danger">
+                      <small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Please
+                        enter valid email</small>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="email" id="form3Example3c" ngModel #email="ngModel" class="form-control"
+                          placeholder="Enter Email" name="email" [pattern]="emailPattern" [(ngModel)]="user.email"
+                          required="required" />
+                      </div>
+                    </div>
+
+                    <div class="" *ngIf="mobile.touched && mobile.invalid && mobile.errors?.['required']"
+                      class="text-danger">
+                      <small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Mobile
+                        is mandatory</small>
+                    </div>
+                    <div *ngIf="mobile.touched && mobile.invalid && mobile.errors?.['moblength'] && mobile.errors?.['mobpattern']" class="text-danger">
+                      <small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Please
+                        enter valid mobile number</small>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-solid fa-mobile fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="tel" id="form3Example4c" ngModel #mobile="ngModel" class="form-control"
+                          placeholder="Enter Mobile Number" name="mobile" [(ngModel)]="user.mobile"
+                          required="required" />
+                      </div>
+                    </div>
+
+                    <div class="" *ngIf="password.touched && password.invalid && password.errors?.['required']"
+                      class="text-danger">
+                      <small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Password
+                        is mandatory</small>
+                    </div>
+                    <div *ngIf="password.touched && password.invalid && password.errors?.['minlength']"
+                      class="text-danger">
+                      <small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Min
+                        length is five</small>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="password" id="form3Example4cd" ngModel #password="ngModel" class="form-control"
+                          placeholder="Enter Password" name="password" [(ngModel)]="user.password" required="required"
+                          minlength="5" />
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fa-solid fa-users fa-lg me-3 fa-fw"></i>
+                      <input required="required" class="form-check-input me-2" ngModel #role="ngModel" type="radio"
+                        value="Patient" id="patient" name="role" [(ngModel)]="user.role" /><label for="patient"
+                        id="rolename"> Patient</label><span>&nbsp;&nbsp;</span>
+                      <input required="required" class="form-check-input me-2" ngModel #role="ngModel" type="radio"
+                        value="Doctor" id="doctor" name="role" [(ngModel)]="user.role" /><label for="doctor"
+                        id="rolename">Doctor</label><span>&nbsp;&nbsp;</span>
+                      <input required="required" class="form-check-input me-2" ngModel #role="ngModel" type="radio"
+                        value="Volunteer" id="volunteer" name="role" [(ngModel)]="user.role" /><label for="volunteer"
+                        id="rolename">Volunteer &nbsp;</label>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fa-solid fa-square-check fa-lg me-3 fa-fw"></i>
+                      <div class="form-group form-check checkbox">
+                        <input ngModel #chek="ngModel" type="checkbox" class="form-check-input me-1" required="required"
+                          id="Check" name="chek" /><label for="Check" id="agree" class="form-check-label">
+                          I agree to the terms and conditions!</label>
+                      </div>
+                    </div>
+
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      <button type="submit" [disabled]="!myform.valid" class="btn btn-primary btn-lg">
+                        Register
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-7 d-flex ml-auto p-lg-5 align-items-center order-1 order-lg-2">
+                  <img src="../../assets/regis5.png" class="img-fluid mx-1 mx-md-4" alt="Sample image" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>

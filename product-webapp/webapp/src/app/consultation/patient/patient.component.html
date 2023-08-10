@@ -1,0 +1,132 @@
+<nav class="navbar navbar-expand-lg  bg-dark">
+  <!-- <a class="navbar-brand" href="#">InstaCure</a> -->
+  <a class="navbar-brand" href="#"><img src="../../../assets/instaCure-IMG-nbg.png" style="height: 50px; "></a>
+
+  <div class="container-fluid">
+    <input type="checkbox" class="ms-auto" id="check">
+    <label for="check" class="checkbtn">
+      <i class=" smallNav"><img src="../assets/menu.png" alt=""></i>
+
+    </label>
+
+    <div class="myNavBar ms-auto" id="navbarRight">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+
+        <li class="nav-item">
+
+          <a class="nav-link" routerLink="/medicine">
+            <button type="submit" class="btn me-2 btn-primary btn-group-sm">
+              Medicine
+            </button>
+          </a>
+        </li>
+        <li class="nav-item">
+
+          <a class="nav-link" routerLink="/landing-page">
+            <button type="submit" class="btn me-2 btn-danger btn-group-sm">
+              Home
+            </button>
+          </a>
+        </li>
+
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section>
+  <div class="container shadow-lg p-4.5 mt-5 mb-5 bg-body rounded">
+    <div class="headerAndButton">
+      <div class="row">
+        <div class="cross_btn col order-last">
+          <button type="button" class="btn btn-close" data-bs-toggle="modal" data-bs-target="#exampleModal"></button>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  If you click on "Yes, Quit", the information you entered will be lost.
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="backMethod()">Yes,
+                    Quit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-5 header">
+          <h2>Consult with a Doctor</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="consultation">
+      <div class="row">
+        <div class="consult_data col-6">
+          <form [formGroup]="myGroup">
+            <div class="consult_symtoms mb-3">
+              <label for="symptom" class="form-label">Tell us your symptom or health problem</label>
+              <textarea class="form-control" formControlName="symptoms"
+                placeholder="Eg: fever, headache, cold and cough etc" id="symptom" style="height: 100px"
+                aria-describedby="sym"></textarea>
+              <div id="sym" class="form-text">
+                Minimum 4 characters
+              </div>
+              <small *ngIf="myGroup.controls['symptoms'].touched && myGroup.controls['symptoms'].invalid"
+                class="text-danger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
+                  class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                Atleast 1 symptom has to be entered</small>
+
+                <div class="dropdown">
+                  <div *ngIf="myGroup.controls['symptoms'].valid" class="dropdown w-75 mt-3">
+                    <select class="form-select" [disabled]="!myGroup.controls['symptoms'].valid"
+                      aria-label="Default select example" formControlName="specality">
+                      <option selected>Choose a relevant speciality</option>
+                      <option value="Dental">Dental</option>
+                      <option value="Ayurveda">Ayurveda</option>
+                      <option value="Homeopathy">Homeopathy</option>
+                      <option value="Ear, Nose, Throat">Ear, Nose, Throat</option>
+                      <option value="General physician">General physician</option>
+                    </select>
+                  </div>
+                </div>
+            </div>
+
+            <div class="consult_num mb-3">
+              <label for="num1" class="form-label">Mobile number</label>
+              <input type="tel" class="form-control" formControlName="mnumber" id="num1" aria-describedby="num1"
+                placeholder="Enter mobile number here">
+              <div id="num1" class="form-text">A verification code will be sent to this mobile number.</div>
+              <small *ngIf="myGroup.controls['mnumber'].touched && myGroup.controls['mnumber'].invalid"
+                class="text-danger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
+                  class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                Mobile number is required(should contain 10 digits only)</small>
+            </div>
+            <button type="submit" [disabled]="!myGroup.valid" class="btn btn-primary"
+              (click)="storeSymptoms()">Continue</button>&emsp;
+          </form>
+        </div>
+        <div class="consult_images col-6 d-flex justify-content-center align-items-center">
+          <div class="image">
+            <img class="consult_images1" src="../../../assets/instaCure-removebg-preview.png" alt="...">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

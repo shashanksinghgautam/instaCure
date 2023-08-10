@@ -1,0 +1,200 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+  <a class="navbar-brand" href="#"
+    ><img src="../../../assets/instaCure-IMG-nbg.png" style="height: 50px"
+  /></a>
+  <div class="container-fluid">
+    <input type="checkbox" class="ms-auto" id="check" />
+    <label for="check" class="checkbtn">
+      <i class="smallNav"><img src="../assets/menu.png" alt="" /></i>
+    </label>
+
+    <div class="myNavBar ms-auto" id="navbarRight">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/medicine">
+            <button type="submit" class="btn me-2 btn-primary btn-group-sm">
+              Medicine
+            </button>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/landing-page">
+            <button
+              type="submit"
+              (click)="clearStorage()"
+              class="btn me-2 btn-danger btn-group-sm"
+            >
+              Logout
+            </button>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="one" *ngFor="let Doctoor of Doctors">
+  <div class="container py-1">
+    <div class="d-flex align-items-right justify-content-right">
+      <div class="col-lg-3 mt-1">
+        <div
+          class="two"
+          style="margin-left: 140px; width: 250px; height: 180px"
+        >
+          <div class="card-body text-center">
+            <img
+            [src]="img"
+            alt="avatar"
+            class="rounded-circle img-fluid bg-light"
+            style="width: 150px; height: 140px;"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mt-1" *ngFor="let Doctoor of Doctors">
+        <div class="two" style="margin-left: 80px; width: 460px; height: 180px">
+          <div class="card-body text-center" style="margin-left: 10px">
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">Full Name</p>
+              </div>
+              <div class="col-sm-6">
+                <p class="text-muted mb-0">{{ Doctoor.user.uname }}</p>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">Email</p>
+              </div>
+              <div class="col-sm-6">
+                <p class="text-muted mb-0">{{ Doctoor.user.email }}</p>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">Mobile</p>
+              </div>
+              <div class="col-sm-6">
+                <p class="text-muted mb-0">{{ Doctoor.user.mobile }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex align-items-center justify-content-center">
+    <div class="col-lg-8 mt-0">
+      <div class="two">
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">Date of Birth</p>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-muted mb-0">
+                  {{ Doctoor.dob }}
+                </span>
+              </div>
+            </div>
+            <hr />
+
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">Address</p>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-muted mb-0">
+                  {{ Doctoor.address }}
+                </span>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">City</p>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-muted mb-0">
+                  {{ Doctoor.city }}
+                </span>
+              </div>
+            </div>
+            <hr />
+
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">Postal Code</p>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-muted mb-0">
+                  {{ Doctoor.postalCode }}
+                </span>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">Country</p>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-muted mb-0"> India </span>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">Education Qualification</p>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-muted mb-0">
+                  {{ Doctoor.educationQualifiaction }}
+                </span>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">Speciality</p>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-muted mb-0">
+                  {{ Doctoor.speciality }}
+                </span>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">Year Of Expertise</p>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-muted mb-0">
+                  {{ Doctoor.yearOfExpertise }}
+                </span>
+              </div>
+            </div>
+            <hr />
+
+            <div class="form-group row">
+              <div class="d-flex justify-content-center mb-0">
+                <button
+                  type="submit"
+                  (click)="UpdateProfile(Doctoor.user.id)"
+                  class="btn btn-primary mb-1"
+                >
+                  Update
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

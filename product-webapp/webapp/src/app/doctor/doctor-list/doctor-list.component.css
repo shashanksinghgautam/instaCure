@@ -1,0 +1,19 @@
+@import url(../../navBar/navBar.component.css);
+.container{
+  background-color: whitesmoke;
+  height: 100%;
+  width: 100%;
+}
+td{
+  text-align: left;
+}
+.xyz{
+  text-align: left;
+  color: white;
+}
+h4{
+  text-align: center;
+}
+.btn:active{
+  background-color: green;
+}

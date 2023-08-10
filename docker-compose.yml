@@ -1,0 +1,109 @@
+version: "3"
+services:
+  eureka-server:
+    build: eureka-server/
+    container_name: eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8761:8761
+  api-gateway:
+    build: api-gateway/
+    container_name: api-gateway
+    depends_on:
+      - eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8086:8086
+  product-webapp:
+    build: product-webapp/
+    image: product-webapp
+    depends_on:
+      - eureka-server
+      - api-gateway
+    restart: always
+    container_name: product-webapp
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - "8099:8099"
+  register-service:
+    build: register-service/
+    container_name: register-service
+    depends_on:
+      - api-gateway
+      - eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8080:8080
+  patient-service:
+    build: patient-service/
+    container_name: patient-service
+    depends_on:
+      - api-gateway
+      - eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8082:8082
+  doctor-service:
+    build: doctor-service/
+    container_name: doctor-service
+    depends_on:
+      - api-gateway
+      - eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8085:8085
+  volunteer-service:
+    build: volunteer-service/
+    container_name: volunteer-service
+    depends_on:
+      - api-gateway
+      - eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8081:8081
+  medicine-service:
+    build: medicine-service/
+    container_name: medicine-service
+    depends_on:
+      - api-gateway
+      - eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8083:8083
+  email-service:
+    build: email-service/
+    container_name: email-service
+    depends_on:
+      - api-gateway
+      - eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8084:8084
+  consultation-patient-service:
+    build: consultation-patient-service/
+    container_name: consultation-patient-service
+    depends_on:
+      - api-gateway
+      - eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8087:8087

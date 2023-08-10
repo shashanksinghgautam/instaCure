@@ -1,0 +1,41 @@
+
+@import url(../../navBar/navBar.component.css);
+
+.one{
+    /* height: 100%;
+    margin: 0%; */
+
+    /* overflow: hidden; */
+
+    background:red;
+    position:absolute;
+    top: 80px;
+    right:0px;
+    bottom:0px;
+    left:0px;
+
+
+    background: rgb(254, 186, 118);
+
+    background: linear-gradient(0deg, hsla(30, 82%, 91%, 1) 0%, hsla(56, 100%, 97%, 1) 50%, hsla(30, 82%, 91%, 1) 100%);
+
+    background: -moz-linear-gradient(0deg, hsla(30, 82%, 91%, 1) 0%, hsla(56, 100%, 97%, 1) 50%, hsla(30, 82%, 91%, 1) 100%);
+
+    background: -webkit-linear-gradient(0deg, hsla(30, 82%, 91%, 1) 0%, hsla(56, 100%, 97%, 1) 50%, hsla(30, 82%, 91%, 1) 100%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FBE9D7", endColorstr="#FFFEEE", GradientType=1 );
+
+
+}
+.two{
+    background: hsla(82, 52%, 88%, 1);
+
+    background: linear-gradient(0deg, hsla(82, 52%, 88%, 1) 0%, hsla(60, 100%, 97%, 1) 50%, hsla(82, 52%, 88%, 1) 100%);
+
+    background: -moz-linear-gradient(0deg, hsla(82, 52%, 88%, 1) 0%, hsla(60, 100%, 97%, 1) 50%, hsla(82, 52%, 88%, 1) 100%);
+
+    background: -webkit-linear-gradient(0deg, hsla(82, 52%, 88%, 1) 0%, hsla(60, 100%, 97%, 1) 50%, hsla(82, 52%, 88%, 1) 100%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#e4f0d0", endColorstr="#FFFFEE", GradientType=1 );
+border-radius: 15px 50px;
+}

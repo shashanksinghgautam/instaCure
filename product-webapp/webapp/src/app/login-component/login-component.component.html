@@ -1,0 +1,148 @@
+<section class="BODY">
+<nav class="navbar navbar-expand-lg  bg-dark">
+  <a class="navbar-brand" href="#"><img src="../../../assets/instaCure-IMG-nbg.png" style="height: 50px; " ></a>
+  <div class="container-fluid">
+    <input type="checkbox" class="ms-auto" id="check">
+    <label for="check" class="checkbtn">
+      <i class=" smallNav"><img src="../assets/menu.png" alt=""></i>
+
+    </label>
+
+    <div class="myNavBar ms-auto" id="navbarRight">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <!-- <li class="nav-item active">
+
+          <a class="nav-link" (click)="gohome()"><span class="navLinks">Home</span></a>
+
+
+
+        </li> -->
+        <li class="nav-item">
+          <!-- <a class="btn me-2 btn-danger btn-group-sm mt-2" routerLink="/landing-page">Cancel</a> -->
+          <a class="nav-link"  routerLink="/medicine">
+            <button type="submit" class="btn me-2 btn-primary btn-group-sm">
+              Medicine
+            </button>
+          </a>
+        </li>
+        <li class="nav-item">
+          <!-- <a class="btn me-2 btn-danger btn-group-sm mt-2" routerLink="/landing-page">Cancel</a> -->
+          <a class="nav-link"  routerLink="/landing-page">
+            <button type="submit" class="btn me-2 btn-danger btn-group-sm">
+              Cancel
+            </button>
+          </a>
+        </li>
+
+        <!-- <li class="nav-item">
+          <a class="nav-link"  (click)="goto()"><span class="navLinks">Profile</span></a>
+          </li> -->
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<section class="gradient-form">
+  <div class="container py-5 h-100">
+    <div id="box" class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+
+                <div class="text-center">
+                  <img id="LOGO" src="../../assets/instaCure.png" style="width: 195px;" alt="logo">
+                  <h4 class="mt-1 mb-5 pb-1"></h4>
+                </div>
+
+                <form #myform="ngForm" (ngSubmit)="loginUser(user.role)">
+                  <div class="d-flex flex-row align-items-center mb-4">
+
+                    <div class="form-outline flex-fill mb-0">
+                      <small class="text-danger"> {{errorMsg}}</small>
+                    </div>
+                  </div>
+                  <div class="" *ngIf="email.touched && email.invalid && email.errors?.['required']"
+                    class="text-danger">
+                    *Email is mandatory</div>
+
+                  <div *ngIf="email.touched && email.invalid && email.errors?.['pattern']" class="text-danger">
+                    *Enter a valid Email</div>
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw" for="form2Example11"></i>
+                    <div class="form-outline flex-fill mb-0">
+
+                      <input type="email" ngModel #email="ngModel" name="email" id="form2Example11" class="form-control"
+                        placeholder="Enter Email" required="required" [pattern]="emailPattern"
+                        [(ngModel)]="user.email" />
+                    </div>
+
+                  </div>
+                  <div *ngIf="pwd.touched && pwd.invalid && pwd.errors?.['required']" class="text-danger">
+                    *Password is mandatory</div>
+
+                  <div *ngIf="pwd.touched && pwd.invalid && pwd.errors?.['minlength']" class="text-danger">
+                    *Password must have atleast 6 characters</div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+
+                      <input type="password" ngModel #pwd="ngModel" name="password" id="form2Example22"
+                        class="form-control" placeholder="Enter Password" required="required" minlength="6"
+                        [(ngModel)]="user.password" />
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fa-solid fa-users fa-lg me-3 fa-fw"></i>
+                    <input class="form-check-input " ngModel #pat="ngModel" required="required" type="radio" name="role"
+                      [(ngModel)]="user.role" value="Patient" id="patient" />&nbsp;<label id="rolename"
+                      for="patient">&nbsp;Patient&nbsp; </label> &nbsp;
+                    <input class="form-check-input " ngModel #doc="ngModel" required="required" type="radio" name="role"
+                      [(ngModel)]="user.role" value="Doctor" id="doctor" />&nbsp;<label id="rolename"
+                      for="doctor">&nbsp;Doctor&nbsp; </label> &nbsp;
+                    <input class="form-check-input " ngModel #vol="ngModel" required="required" type="radio" name="role"
+                      [(ngModel)]="user.role" value="Volunteer" id="volunteer" />&nbsp;<label id="rolename"
+                      for="volunteer">&nbsp;Volunteer </label>
+
+                  </div>
+
+                  <div class="text-center pt-1 mb-5 pb-1">
+                    <button class="btn btn-primary btn-block fa-lg mb-3" type="submit" id="login"
+                      [disabled]="!myform.valid">Log in
+                    </button>&nbsp;
+                    <a class="text-muted" href="#!">Forgot password?</a>
+                  </div>
+
+                  <form (ngSubmit)="createNew()">
+                    <div class="d-flex align-items-center justify-content-center pb-4">
+                      <p class="mb-0 me-2">Don't have an account?</p>
+                      <button type="submit" class="btn btn-outline-danger">Create New</button>
+                    </div>
+                  </form>
+                </form>
+
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center" id="data">
+              <div class="text-black px-3 py-4 p-md-5 mx-md-4">
+                <h4 class="mb-4">We are more than just a webApp</h4>
+                <p class="small mb-0">Access video consultation with India’s top doctors on the InstaCure app. Connect
+                  with
+                  doctors online, available 24/7, from the comfort of your home.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</section>

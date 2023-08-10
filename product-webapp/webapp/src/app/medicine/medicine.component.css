@@ -1,0 +1,47 @@
+ @import url(../navBar/navBar.component.css);
+
+
+.xyz{
+  margin-top:0%;
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+#searchText-id {
+  margin:  auto;
+  display: block;
+
+  top: 65px;
+  text-align: center;
+  height: 30px;
+   width: 500px;
+
+}
+
+  .card-body {
+    width: 95%;
+    overflow:hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+
+  }
+
+  .card {
+    max-width: 350px;
+    max-height: 280nm;
+    margin: 0 0.5em;
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+    border: none;
+    border-radius: 0;
+    line-height: 100px;
+    background-color: white;
+    margin: 10px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    vertical-align: middle;
+  }
+
+
+

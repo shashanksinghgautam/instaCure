@@ -1,0 +1,91 @@
+
+.checkbtn {
+    display: none;
+  }
+
+  #check {
+    display: none;
+  }
+
+  .navbar {
+    height: 80px;
+    background: linear-gradient(to right, #332f2d, #395250,#332f2d);
+  }
+  .navbar-brand {
+    position: absolute;
+    color: aquamarine;
+    height: 80px;
+    width: 240px;
+    padding-left:12px;
+    padding-top: 16px;
+    font-size: 25px;
+    border: solid silver;
+    border-left: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-width: 0.1px;
+    font-family: andale mono,monospace;
+
+  }
+
+  .navLinks {
+    background: -webkit-linear-gradient( #ff9934,#ff9934,#ff9934, #ffffff, #138708,#138708);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    font-size: 28px;
+    font-weight: 600;
+
+  }
+
+  .navLinks:hover{
+    cursor: pointer;
+  }
+  .Smaller{
+    padding-top: 17px;
+   }
+
+  @media (max-width: 992px) {
+    .checkbtn {
+      display: block;
+    }
+
+    #check:checked~.myNavBar {
+
+      transition: ease-in-out 0.3s;
+      right: 0;
+    }
+
+    .myNavBar {
+      position: fixed;
+      top: 80px;
+      right: -100%;
+      background: linear-gradient(to right, #395250, #332f2d);
+      height: 29vh;
+      width: 30%;
+      z-index: 2;
+      align-items: center;
+      text-align: center;
+      border-radius: 0px 0px 0px 10px;
+    }
+   .Smaller{
+    margin-top: -15px;
+   }
+    .smallNav {
+      position: absolute;
+      right: 0;
+      margin-right: 10px;
+      margin-top: -23px;
+    }
+    .navLinks {
+      background: -webkit-linear-gradient( #ff9934,#ff9934,#ff9934, #ffffff, #138708,#138708);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 23px;
+      font-weight: 600;
+
+    }
+
+    .smallNav:hover {
+      cursor: pointer;
+    }
+  }

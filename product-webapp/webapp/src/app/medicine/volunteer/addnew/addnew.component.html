@@ -1,0 +1,151 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+  <a class="navbar-brand" href="#"><img src="../../../assets/instaCure-IMG-nbg.png" style="height: 50px; " ></a>
+  <div class="container-fluid">
+    <input type="checkbox" class="ms-auto" id="check" />
+    <label for="check" class="checkbtn">
+      <i class="smallNav"><img src="../assets/menu.png" alt="" /></i>
+    </label>
+
+    <div class="myNavBar ms-auto" id="navbarRight">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+      
+
+        <li>
+      
+        <li class="nav-item">
+          <!-- <a class="btn me-2 btn-danger btn-group-sm mt-2" routerLink="/landing-page">Cancel</a> -->
+          <a class="nav-link"  routerLink="/landing-page">
+            <button type="submit" class="btn me-2 btn-danger btn-group-sm">
+              Home
+            </button>
+          </a>
+        </li>
+
+        <!-- <li class="nav-item">
+          <a class="nav-link"  (click)="goto()"><span class="navLinks">Profile</span></a>  
+          </li> -->
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <h3 class="card-header text-center bg-danger text-light mt-5">ADD Medicine</h3><br><br><br>
+  <div [hidden]="submitted" class="xyz">
+
+    <!--<form (ngSubmit)="onSubmit()">
+
+      <table class="table table-hover table-striped">
+
+
+        <tr id="x">
+          <td> <label for="name">Medicine Id <span style="color: red;">*</span></label></td>
+          <td> <input type="text" id="mid" class="form-control" required [(ngModel)]="Medicine.mid" name="mid"></td>
+        </tr>
+
+        <tr>
+          <td> <label for="name">Medicine Name <span style="color: red;">*</span></label></td>
+          <td> <input type="text" class="form-control" id="firstName" required [(ngModel)]="Medicine.medicinename"
+              name="firstName"></td>
+        </tr>
+
+
+        <tr id="x">
+          <td> <label for="name">Quantity <span style="color: red;">*</span></label></td>
+          <td> <input type="text" class="form-control" id="qnt" required [(ngModel)]="Medicine.qnt" name="qnt"></td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="name">Price <span style="color: red;">*</span></label></td>
+          <td><input type="text" class="form-control" id="price" required [(ngModel)]="Medicine.price" name="price">
+          </td>
+        </tr>
+
+
+        <tr id="x">
+          <td> <label for="name">Category <span style="color: red;">*</span></label></td>
+          <td> <input type="text" class="form-control" id="category" required [(ngModel)]="Medicine.category"
+              name="category"></td>
+        </tr>
+      </table>
+      <div class="row">
+        <div class="col">
+          <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col">
+          <button (click)="gotoList()" type="button" value="submit" class="btn btn-danger ">cancel</button>
+        </div>
+      </div>
+    </form>-->
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label">Medicine Id <span style="color: red;">*</span> </label>
+        <div class="col-sm-10">
+
+          <input type="text" id="mid" class="form-control" required [(ngModel)]="Medicine.mid"  #Medid="ngModel"  name="mid">
+          <div *ngIf="Medid.invalid && Medid.touched" id="small">Enter valid ID</div>
+
+         
+        </div>
+      </div><br>
+      <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label">Medicine Name <span style="color: red;">*</span></label>
+        <div class="col-sm-10">
+
+          <input type="text" class="form-control" id="firstName" required [(ngModel)]="Medicine.medicinename" #Mename="ngModel"
+            name="firstName">
+            <div *ngIf="Mename.invalid && Mename.touched" id="small">Enter valid Medicine Name</div>
+
+          
+
+        </div>
+      </div><br>
+      <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label">Quantity <span style="color: red;">*</span></label>
+        <div class="col-sm-10">
+
+          <input type="text" class="form-control" id="qnt" required [(ngModel)]="Medicine.qnt" #Meqnt="ngModel" name="qnt">
+          <div *ngIf="Meqnt.invalid && Meqnt.touched" id="small">Quantity *</div>
+
+          
+        </div>
+      </div><br>
+      <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label">Price <span style="color: red;">*</span></label>
+        <div class="col-sm-10">
+
+          <input type="text" class="form-control" id="price" required [(ngModel)]="Medicine.price"  #Meprice="ngModel" name="price">
+          <div *ngIf="Meprice.invalid && Meprice.touched" id="small">Enter valid Price</div>
+
+          
+        </div>
+      </div><br>
+      <div class="form-group row">
+        <label for="name" class="col-sm-2 col-form-label">Category <span style="color: red;">*</span></label>
+        <div class="col-sm-10">
+
+          <input type="text" class="form-control" id="category" required [(ngModel)]="Medicine.category"  #Mecat="ngModel" name="category">
+          <div *ngIf="Mecat.invalid && Mecat.touched" id="small">Enter valid Category</div>
+
+         
+
+        </div>
+      </div><br>
+    
+      <div class="form-group row">
+        <div class="col" style="margin-left: 200px;">
+          <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col" style="margin-left: 500px;">
+          <button (click)="gotoList()" type="button" value="submit" class="btn btn-danger ">cancel</button>
+        </div>
+      </div><br>
+    </form>
+    <div [hidden]="!submitted">
+      <h4>You submitted successfully!</h4>
+      <!-- <button class="btn btn-success" (click)="newMedicine()">Add</button> -->
+    </div>
+  </div>
+
+  
+</div>

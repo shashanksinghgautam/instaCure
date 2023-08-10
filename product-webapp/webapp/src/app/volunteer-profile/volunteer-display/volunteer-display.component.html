@@ -1,0 +1,150 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+  <a class="navbar-brand" href="#"
+    ><img src="../../../assets/instaCure-IMG-nbg.png" style="height: 50px"
+  /></a>
+  <div class="container-fluid">
+    <input type="checkbox" class="ms-auto" id="check" />
+    <label for="check" class="checkbtn">
+      <i class="smallNav"><img src="../assets/menu.png" alt="" /></i>
+    </label>
+
+    <div class="myNavBar ms-auto" id="navbarRight">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/medicine">
+            <button type="submit" class="btn me-2 btn-primary btn-group-sm">
+              Medicine
+            </button>
+          </a>
+        </li>
+        <li class="nav-item">
+          <!-- <a class="btn me-2 btn-danger btn-group-sm mt-2" routerLink="/landing-page">Cancel</a> -->
+          <a class="nav-link" routerLink="/landing-page">
+            <button
+              type="submit"
+              (click)="clearStorage()"
+              class="btn me-2 btn-danger btn-group-sm"
+            >
+              Logout
+            </button>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="one" *ngFor="let Volunteer of Volunteers">
+  <div class="container py-1">
+    <div class="d-flex align-items-center justify-content-center">
+      <div class="col-lg-4 mt-1">
+        <div class="two">
+          <div class="card-body text-center">
+            <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+              class="rounded-circle img-fluid bg-light" style="width: 100px;">  -->
+            <img
+              [src]="img"
+              alt="avatar"
+              class="rounded-circle img-fluid bg-light"
+              style="width: 150px; height: 140px;"
+            />
+
+            <h5 class="my-3">{{ Volunteer.user.uname }}</h5>
+            <p class="text-muted mb-1">Volunteer</p>
+            <p class="text-muted mb-4">{{ Volunteer.city }}</p>
+            <div class="d-flex justify-content-center mb-2">
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="UpdateProfile(Volunteer.vid)"
+              >
+                UPDATE
+              </button>
+              <!-- <button type="button" class="btn btn-outline-primary ms-1">Message</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex align-items-center justify-content-center">
+    <div class="col-lg-8 mt-0">
+      <div class="two">
+        <div class="card-body mb-2">
+          <div class="row">
+            <div class="col-sm-6">
+              <p class="mb-0">Full Name</p>
+            </div>
+            <div class="col-sm-6">
+              <p class="text-muted mb-0">{{ Volunteer.user.uname }}</p>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-6">
+              <p class="mb-0">Email</p>
+            </div>
+            <div class="col-sm-6">
+              <p class="text-muted mb-0">{{ Volunteer.user.email }}</p>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-6">
+              <p class="mb-0">Mobile</p>
+            </div>
+            <div class="col-sm-6">
+              <p class="text-muted mb-0">{{ Volunteer.user.mobile }}</p>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-6">
+              <p class="mb-0">Address</p>
+            </div>
+            <div class="col-sm-6">
+              <p class="text-muted mb-0">{{ Volunteer.address }}</p>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-6">
+              <p class="mb-0">City</p>
+            </div>
+            <div class="col-sm-6">
+              <p class="text-muted mb-0">{{ Volunteer.city }}</p>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-6">
+              <p class="mb-0">State</p>
+            </div>
+            <div class="col-sm-6">
+              <p class="text-muted mb-0">{{ Volunteer.state }}</p>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-6">
+              <p class="mb-0">Postal Code</p>
+            </div>
+            <div class="col-sm-6">
+              <p class="text-muted mb-0">{{ Volunteer.zipcode }}</p>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-sm-6">
+              <p class="mb-0">Country</p>
+            </div>
+            <div class="col-sm-6">
+              <p class="text-muted mb-1">India</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

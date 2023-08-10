@@ -1,0 +1,31 @@
+@import url(../navBar/navBar.component.css);
+
+
+
+#formbox{
+  padding-top: 90px;
+  padding-bottom: 129px;
+}
+.form-check-label{
+  font-size: 16px;
+}
+.checkbox{
+  padding-top: 2px;
+}
+.BODY{
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #ff9934,#ff9934, #ffffff, #ffffff,#ffffff, #138708,#138708)
+}
+#rolename{
+  padding-top: 3px;
+}
+#rolename,#patient,#doctor,#volunteer,#Check,#agree:hover{
+  cursor: pointer;
+}
+@media (max-width: 992px) {
+ 
+ .BODY{
+  overflow: scroll;
+ }
+}

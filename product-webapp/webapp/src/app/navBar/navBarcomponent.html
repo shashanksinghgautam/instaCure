@@ -1,0 +1,74 @@
+<nav class="navbar navbar-expand-lg ">
+  <a class="navbar-brand" href="#"><img src="../../../assets/instaCure-IMG-nbg.png" style="height: 50px" /></a>
+
+  <div class="container-fluid">
+    <input type="checkbox" class="ms-auto" id="check" />
+    <label for="check" class="checkbtn">
+      <i class="smallNav"><img src="../assets/menu.png" alt="" /></i>
+    </label>
+
+    <div class="myNavBar ms-auto" id="navbarRight">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="Smaller">
+          <a class="text-white text-small  "  [hidden]="role != 'Patient'"> <span
+              >Welcome</span></a>
+        </li>
+        <li  class="Smaller">
+          <a class="text-white text-small "  [hidden]="role != 'Doctor'"><span
+              >Hi Doctor</span></a>
+        </li>
+        <li  class="Smaller">
+          <a class="text-white text-small " [hidden]="role != 'Volunteer'" ><span
+             >Hi Volunteer</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [hidden]="role != 'Volunteer'" routerLink="/vol-notification"><img
+              style="height: 42px;width:39px" src="../../assets/purplemail.png" alt="" /></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/medicine"><span class="navLinks">Medicines</span></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [hidden]="role == null" (click)="goto()"><span class="navLinks">Profile</span></a>
+        </li>
+
+        <li class="nav-item">
+
+          <a class="nav-link" [hidden]="role != 'Patient'" routerLink="/landing-page">
+            <button type="submit" (click)="clearStorage()" class="btn me-2 btn-danger btn-group-sm">
+              Logout
+            </button>
+          </a>
+        </li>
+        <li class="nav-item">
+
+          <a class="nav-link" [hidden]="role != 'Volunteer'" routerLink="/landing-page">
+            <button type="submit" (click)="clearStorage()" class="btn me-2 btn-danger btn-group-sm">
+              Logout
+
+            </button>
+          </a>
+        </li>
+        <li class="nav-item">
+
+          <a class="nav-link" [hidden]="role != 'Doctor'" routerLink="/landing-page">
+            <button type="submit" (click)="clearStorage()" class="btn me-2 btn-danger btn-group-sm">
+              Logout
+
+            </button>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [hidden]="role != null" routerLink="/login-component"><span
+              class="navLinks">Login</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [hidden]="role != null" routerLink="/register-component"><span
+              class="navLinks">Register</span></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

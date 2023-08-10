@@ -1,0 +1,90 @@
+<section class="BODY">
+
+<nav class="navbar navbar-expand-lg  bg-dark">
+  <a class="navbar-brand" href="#"><img src="../../../assets/instaCure-IMG-nbg.png" style="height: 50px; " ></a>
+  <div class="container-fluid">
+    <input type="checkbox" class="ms-auto" id="check">
+    <label for="check" class="checkbtn">
+      <i class=" smallNav"><img src="../assets/menu.png" alt=""></i>
+
+    </label>
+
+    <div class="myNavBar ms-auto" id="navbarRight">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <!-- <a class="btn me-2 btn-danger btn-group-sm mt-2" routerLink="/landing-page">Cancel</a> -->
+          <a class="nav-link"  routerLink="/medicine">
+            <button type="submit" class="btn me-2 btn-primary btn-group-sm">
+              Medicine
+            </button>
+          </a>
+        </li>
+        <li class="nav-item">
+          <!-- <a class="btn me-2 btn-danger btn-group-sm mt-2" routerLink="/landing-page">Cancel</a> -->
+          <a class="nav-link"  routerLink="/landing-page">
+            <button type="submit" class="btn me-2 btn-danger btn-group-sm">
+              Home
+            </button>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="Body">
+  <div class="container col-lg-10 px-0">
+
+
+    <section class="p-5 col-md-12 text-center mainDiv"
+      style="background-image: url(https://mdbootstrap.com/img/Photos/Others/background2.jpg); background-position: center center; border-radius: 8px;">
+
+
+      <h3 class="text-center font-weight-bold text-white mt-5 mb-3">Raise Your Request</h3>
+
+      <h2 class="text-center font-weight-normal text-white mx-auto mb-4 pb-2">You Are Our Top Most Priority</h2>
+
+      <form class="mb-5 mx-md-5" action="" #myform="ngForm" (ngSubmit)="sendEmail()">
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <input type="text" id="name" name="name" [(ngModel)]="email.name" class="form-control" placeholder="Name">
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <input type="email" id="email" name="email" [(ngModel)]="email.email" class="form-control"
+              placeholder="Email">
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 mb-4">
+            <input type="text" id="subject" name="subject" [(ngModel)]="email.subject" class="form-control"
+              placeholder="Subject">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group mb-4">
+              <textarea class="form-control rounded" name="message" [(ngModel)]="email.message" id="message" rows="4"
+                placeholder="Type your request here"></textarea>
+            </div>
+
+            <div class="text-center">
+              <button type="submit" class="btn text-info btn-dark btn-lg">Submit</button>
+            </div>
+          </div>
+        </div>
+
+      </form>
+
+    </section>
+
+  </div>
+</div>
+</section>

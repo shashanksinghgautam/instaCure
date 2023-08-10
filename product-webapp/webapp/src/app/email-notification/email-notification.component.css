@@ -1,0 +1,27 @@
+@import url(../navBar/navBar.component.css);
+.container{
+  border-radius: 8px;
+  padding-top: 100px;
+}
+
+.mainDiv{
+  box-shadow: rgba(0, 0, 0, 0.1) 12px 12px 6px;
+}
+.Body{
+  width: 100vw;
+  height: 93.5vh;
+  background-color: #f7f7f7;
+
+}
+.BODY{
+  height: 100vh;
+  overflow: hidden;
+  
+}
+@media (max-width: 992px) {
+ 
+  .BODY{
+   overflow: hidden;
+  }
+ }
+ 

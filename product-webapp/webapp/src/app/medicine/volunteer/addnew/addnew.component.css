@@ -1,0 +1,11 @@
+@import url(../../../navBar/navBar.component.css);
+.xyz{
+    width: 100%;
+    
+}
+.container{
+    background-color: rgba(174, 242, 225, 0.147);
+    width: 100%;
+
+}
+

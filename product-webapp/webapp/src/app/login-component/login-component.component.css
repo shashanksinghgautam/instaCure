@@ -1,0 +1,56 @@
+@import url(../navBar/navBar.component.css);
+
+.gradient-custom-2 {
+  /* fallback for old browsers */
+  background: #fccb90;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  /* background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593); */
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+}
+
+#login {
+  color: cornsilk;
+  height: 40px;
+  padding-top:3px;
+
+}
+#rolename{
+  padding-top: 2px;
+}
+#data {
+  background: linear-gradient(to bottom, #ee7724, #d8363a, #dd3675,  #ee7724);
+  border-radius: 6px;
+}
+.BODY{
+  height: 100vh;
+  overflow: auto;
+  background: linear-gradient(to bottom, #ff9934,#ff9934, #ffffff, #ffffff,#ffffff, #138708,#138708)
+}
+
+
+
+#LOGO {
+  height: 190px;
+  width: 150px;
+  border-radius: 4px;
+}
+
+#patient,#doctor,#volunteer,label:hover{
+  cursor: pointer;
+}
+
+@media (min-width: 1080px) {
+
+  .gradient-custom-2 {
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+  }
+}
+@media (max-width: 992px) {
+  section{
+   height: 100%;
+  }
+ }

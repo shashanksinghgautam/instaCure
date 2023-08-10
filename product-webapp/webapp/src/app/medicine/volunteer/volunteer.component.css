@@ -1,0 +1,65 @@
+@import url(../../navBar/navBar.component.css);
+.nav{
+    background-color: black;
+    height: 45px;
+  text-align: right;
+   width: 80%;
+   margin-right: auto;
+   margin-left: auto;
+   margin-top: 0px;
+   color:white;
+}
+.container{
+    display:flex;
+    height:550px;
+    width:80%;
+    border: 1px solid;
+    margin :auto;
+    margin-top: 0px;
+    padding: 0%;
+    
+
+}
+.left{
+    display:flex;
+    flex-direction:column ;
+    width: 50%;
+    align-items: center;
+    background-color: whitesmoke;
+    margin-left: 0%;
+    box-sizing: border-box;
+}
+.left h2{
+    font-size: 3rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 35px;
+}
+.box{
+    padding: 10px;
+    width:65%;
+    margin:12px;
+    border:1px solid black;
+    outline :none;
+    border-radius: 20px;
+}
+#button{
+    padding:10px 10px;
+    width:65%;
+    margin-top: 16px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    background-color: rgb(36, 142, 241);
+    color: white;
+    margin-left: 20px;
+}
+#button:hover{
+    background-color: brown;
+}
+.right{
+    background-color: lightblue;
+    width: 60%;
+    height:550px ;
+}
+.btn{font-size: 10px;}

@@ -1,0 +1,332 @@
+<nav class="navbar navbar-expand-lg  bg-dark">
+  <a class="navbar-brand" href="#"><img src="../../../assets/instaCure-IMG-nbg.png" style="height: 50px; "></a>
+  <div class="container-fluid">
+    <input type="checkbox" class="ms-auto" id="check">
+    <label for="check" class="checkbtn">
+      <i class=" smallNav"><img src="../assets/menu.png" alt=""></i>
+
+    </label>
+
+    <div class="myNavBar ms-auto" id="navbarRight">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+
+          <a class="nav-link" routerLink="/medicine">
+            <button type="submit" class="btn me-2 btn-primary btn-group-sm">
+              Medicine
+            </button>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/landing-page">
+            <button type="submit" (click)="clearStorage()" class="btn me-2 btn-danger btn-group-sm">
+              Logout
+            </button>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="one" *ngFor="let Volunteera of Doctors ">
+  <div class="container py-1">
+    <div class=" d-flex align-items-right justify-content-right">
+      <div class="col-lg-3 mt-1">
+        <div class="two" style="margin-left:140px;width:250px;height:180px">
+
+          <div class="card-body text-center">
+            <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+            class="rounded-circle img-fluid bg-light" style="width: 100px;"> -->
+            <input type="file" (change)="kaunda($event)" />
+            <h5 class="my-3">{{Volunteera.user.uname}}</h5>
+            <p class="text-muted mb-1">Doctor</p>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mt-1">
+        <div class="two" style="margin-left:80px;width:460px;height:180px">
+
+          <div class="card-body text-center" style="margin-left:10px">
+
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">Full Name</p>
+              </div>
+              <div class="col-sm-6">
+                <p class="text-muted mb-0">{{Volunteera.user.uname}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">Email</p>
+              </div>
+              <div class="col-sm-6">
+                <p class="text-muted mb-0">{{Volunteera.user.email}}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">Mobile</p>
+              </div>
+              <div class="col-sm-6">
+                <p class="text-muted mb-0">{{Volunteera.user.mobile}}</p>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-lg-4 mt-1" style="padding-left:130px">
+        <div class="two" style="width:300px;height:180px">
+          <div class="card-body">
+            <h5>Educational Detail</h5>
+            <div class="row">
+              <div class="col-sm-6">
+                <label for="education" class="labels">Qualification </label>
+              </div>
+              <div class="col-sm-6">
+                <input type="text" ngModel #educationQualifiaction="ngModel" class="form-control" id="education"
+                  name="educationQualifiaction" required="required" [(ngModel)]="Doctor.educationQualifiaction">
+
+              </div>
+              <div class="col-sm-6">
+                <p class="mb-0">Speciality</p>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-muted mb-0">
+                  <div class="form-group row">
+                    <div class="col">
+                      <select id="state" ngModel #speciality="ngModel" class="form-control" id="speciality"
+                        name="speciality" required="required" [(ngModel)]="Doctor.speciality">
+                        <option selected>Choose...</option>
+                        <option>Dental</option>
+                        <option>Ayurveda</option>
+                        <option>Homeopathy</option>
+                        <option>Ear, Nose, Throat</option>
+                        <option>General physician</option>
+                      </select>
+                    </div>
+                  </div>
+                </span>
+              </div>
+              <div class="col-sm-6">
+                <label for="expertise" class="labels">Year of Expertise </label>
+              </div>
+              <div class="col-sm-6">
+                <input type="text" ngModel #yearOfExpertise="ngModel" class="form-control" id="expertise"
+                  name="yearOfExpertise" required="required" [(ngModel)]="Doctor.yearOfExpertise">
+                <!-- <div *ngIf="expertise.touched && expertise.invalid" class="alert">
+                *Please enter year of expertise.
+              </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class=" d-flex align-items-center justify-content-center">
+
+    <div class="col-lg-8 mt-0 ">
+      <div class="two">
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">Gender</p>
+              </div>
+              <select class="form-control" ngModel #gender="ngModel" id="gender" name="gender" required
+                [(ngModel)]="Doctor.gender">
+                <option selected disabled value="">Choose...</option>
+                <option> MALE </option>
+                <option> FEMALE </option>
+                <option> OTHER </option>
+              </select>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">Date of Birth</p>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-muted mb-0">
+                  <div class="form-group row">
+                    <div class="col">
+                      <input type="date" ngModel #dob="ngModel" name="dob" class="form-control" id="dob"
+                        required="required" min="01-01-2020" [(ngModel)]="Doctor.dob" />
+                      <!-- <div *ngIf="dob.touched && dob.invalid " class="alert">
+                      *Date of Birth is required
+                    </div>
+                    <div *ngIf="dob.touched && dob.invalid && dob.errors?.['min']" class="alert">
+                      *Wrong DOB
+                    </div> -->
+                    </div>
+                  </div>
+                </span>
+              </div>
+            </div>
+            <hr>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">Address</p>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-muted mb-0">
+                  <div class="form-group row">
+                    <div class="col">
+                      <input type="text" ngModel #address="ngModel" class="form-control" id="address" name="address"
+                        placeholder="1234 Main St" required="required" [(ngModel)]="Doctor.address">
+                      <!-- <div *ngIf="address.touched && address.invalid" class="alert">
+                      *Please enter your address
+                    </div> -->
+                    </div>
+                  </div>
+                </span>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">City</p>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-muted mb-0">
+                  <div class="col">
+
+                    <input type="text" ngModel #city="ngModel" class="form-control" id="city" name="city"
+                      required="required" [(ngModel)]="Doctor.city">
+                    <!-- <div *ngIf="city.touched && city.invalid" class="alert">
+                    *Please enter your city name
+                  </div> -->
+
+                  </div>
+                </span>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">Postal Code</p>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-muted mb-0">
+                  <div class="col">
+                    <input type="text" ngModel #postal="ngModel" class="form-control" id="postal" name="postal"
+                      required="required" [(ngModel)]="Doctor.postalCode">
+                    <!-- <div *ngIf="postal.touched && postal.invalid" class="alert">
+                    *Please enter your postal code.
+                  </div> -->
+                  </div>
+                </span>
+              </div>
+            </div>
+            <hr>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">State</p>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-muted mb-0">
+                  <div class="form-group row">
+                    <div class="col">
+                      <select id="state" class="form-control" ngModel #state="ngModel" name="state" required
+                        [(ngModel)]="Doctor.state">
+                        <option selected>Choose...</option>
+                        <option>Andhra Pradesh</option>
+                        <option>Arunachal Pradesh</option>
+                        <option>Assam</option>
+                        <option>Bihar</option>
+                        <option>Chhattisgarh</option>
+                        <option>Goa</option>
+                        <option>Gujarat</option>
+                        <option>Haryana</option>
+                        <option>Himachal Pradesh</option>
+                        <option>Jharkhand</option>
+                        <option>Karnataka</option>
+                        <option>Kerala</option>
+                        <option>Madhya Pradesh</option>
+                        <option>Maharashtra</option>
+                        <option>Manipur</option>
+                        <option>Meghalaya</option>
+                        <option>Mizoram</option>
+                        <option>Nagaland</option>
+                        <option>Odisha</option>
+                        <option>Punjab</option>
+                        <option>Rajasthan</option>
+                        <option>Sikkim</option>
+                        <option>Tamil Nadu </option>
+                        <option>Telangana</option>
+                        <option>Tripura</option>
+                        <option>Uttar Pradesh</option>
+                        <option>Uttarakhand</option>
+                        <option>West Bengal </option>
+                      </select>
+                      <!-- <div *ngIf="address.touched && address.invalid" class="alert">
+                      *Please enter your state
+                    </div> -->
+                    </div>
+                  </div>
+                </span>
+              </div>
+            </div>
+
+
+            <hr>
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">Country</p>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-muted mb-0">
+                  <div class="col">
+                    <input type="text" readonly class="form-control form-control-sm " placeholder="India"
+                      name="Country">
+                  </div>
+                </span>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-6">
+                <p class="mb-0">Doctor license</p>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-muted mb-0">
+                  <div class="form-group row">
+                    <div class="col">
+                      <input type="file" class="form-controlform-control-sm" placeholder="doctor license">
+                    </div>
+                  </div>
+                </span>
+              </div>
+            </div>
+            <hr>
+            <div class="form-group row">
+              <div class="d-flex justify-content-center mb-0">
+                <button type="submit" (click)="onsubmit()" class="btn btn-primary mb-1"> Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

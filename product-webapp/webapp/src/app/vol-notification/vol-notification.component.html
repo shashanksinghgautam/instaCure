@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+  <a class="navbar-brand" href="#"><img src="../../../assets/instaCure-IMG-nbg.png" style="height: 50px; "></a>
+  <div class="container-fluid">
+    <input type="checkbox" class="ms-auto" id="check" />
+    <label for="check" class="checkbtn">
+      <i class="smallNav"><img src="../assets/menu.png" alt="" /></i>
+    </label>
+
+    <div class="myNavBar ms-auto" id="navbarRight">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+
+
+
+
+        <li class="nav-item">
+
+          <a class="nav-link" routerLink="/landing-page">
+            <button type="submit" class="btn btn-danger ">
+              Home
+            </button>
+          </a>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="panel panel-primary">
+  <br>
+  <div class="panel-heading d-flex justify-content-center ">
+    <h2>See Your Requests</h2>
+
+  </div>
+  <div class="panel-body">
+    <br>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Subject</th>
+          <th>Message</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let email of emailarray; index as i ">
+          <td>{{i+1}}</td>
+          <td>{{email.name}}</td>
+          <td>{{email.subject}}</td>
+          <td>{{email.message}}</td>
+          <td><button (click)="deleteMail(email.subject)" class="btn btn-danger">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

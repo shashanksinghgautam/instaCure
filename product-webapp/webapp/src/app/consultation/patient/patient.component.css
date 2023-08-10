@@ -1,0 +1,53 @@
+@import url(../../navBar/navBar.component.css);
+.container {
+    display: block;
+    width: 65%;
+    background-color: white;
+    padding: 1.75em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .headerAndButton {
+    padding-bottom: 1em;
+  }
+  
+  .headerAndButton .header h2{
+     font-weight: 600;
+  }
+  .cross_btn {
+    text-align: end;
+  }
+  
+  .consult_images {
+    border-left: 1px solid black;
+  }
+  
+  .form-control.ng-touched.ng-invalid {
+    border: 1px solid red;
+  }
+  
+  .form-control.ng-touched.ng-valid {
+    border: 1px solid green;
+  }
+  .consult_images1{
+    animation: imageAnimation 10s infinite;
+  }
+  @keyframes imageAnimation {
+    0%   { opacity:1;}
+    50%  { opacity:0;transform: rotate(360deg) scale(0) ; clip-path: ellipse();}
+    100% { opacity:1;}
+  }
+
+  @media (max-width: 1100px){
+    .consult_images{
+      border-left: 0px;
+    }
+    .container .consultation .row{
+      display: flex;
+      flex-direction: column;
+      width: 200%;
+    }
+    
+  }
+  
